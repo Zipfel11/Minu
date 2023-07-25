@@ -12,10 +12,12 @@ public class GameWindow{
 		jframe.setSize(400, 400);
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jframe.setTitle("Game"); 
+		jframe.setLocationRelativeTo(null);
+
 		
 		jframe.add(gamePanel);
 		
-		//dont move!
+		//don't move!
 		jframe.setVisible(true);
 	}
 	
