@@ -10,13 +10,15 @@ public class GameWindow{
 	
 	public GameWindow(GamePanel gamePanel) {
 		jframe = new JFrame();
-		
-		jframe.setSize(this.SCREENWIDTH, this.SCREENHEIGHT);
+
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jframe.add(gamePanel);
 		jframe.setTitle("Game"); 
 		jframe.setLocationRelativeTo(null);
+		jframe.setResizable(false);
+		jframe.pack();
 		
-		jframe.add(gamePanel);
+
 		
 		//don't move!
 		jframe.setVisible(true);
