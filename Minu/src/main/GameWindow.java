@@ -1,13 +1,13 @@
 package main;
-import java.awt.Color;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowFocusListener;
 
 import javax.swing.*;
 
 
 public class GameWindow{
 	private JFrame jframe;
-	private final int SCREENWIDTH = 400, SCREENHEIGHT = 400;  
-	
+
 	public GameWindow(GamePanel gamePanel) {
 		jframe = new JFrame();
 
@@ -17,7 +17,17 @@ public class GameWindow{
 		jframe.setLocationRelativeTo(null);
 		jframe.setResizable(false);
 		jframe.pack();
-		
+		jframe.addWindowFocusListener(new WindowFocusListener() {
+			@Override
+			public void windowGainedFocus(WindowEvent e) {
+
+			}
+
+			@Override
+			public void windowLostFocus(WindowEvent e) {
+				gamePanel.getGame().windowFocusLost();
+			}
+		});
 
 		
 		//don't move!
